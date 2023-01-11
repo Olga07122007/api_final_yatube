@@ -22,8 +22,8 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name='posts'
     )
     image = models.ImageField(
-        upload_to='posts/images', 
-        null=True, 
+        upload_to='posts/images',
+        null=True,
         blank=True,
         default=None
     )
@@ -34,7 +34,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.text
-        
+
 
 class Comment(models.Model):
     author = models.ForeignKey(
@@ -47,8 +47,8 @@ class Comment(models.Model):
     created = models.DateTimeField(
         'Дата добавления', auto_now_add=True, db_index=True
     )
-    
-    
+
+
 class Follow(models.Model):
     user = models.ForeignKey(
         User,
